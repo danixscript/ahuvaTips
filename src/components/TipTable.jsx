@@ -18,9 +18,11 @@ import '../App.css'
 const [Rows,setRows] = useState([]);
   return (
     <TableContainer component={Paper}>
+      <h2>טבלת טיפים</h2>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow  className='rtl'>
+          <TableCell align="right">סכום כסף</TableCell>  
              <TableCell align="right"> שם המלצר</TableCell>
         <TableCell align="right"> משעה</TableCell> 
 
@@ -39,10 +41,12 @@ const [Rows,setRows] = useState([]);
         </TableHead>
         <TableBody>
           {props.array.map((row) => (
+            
             <TableRow
               key={row.name}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
+               <TableCell align="right">{}</TableCell>
               <TableCell align="right" component="th" scope="row">
                 {row.name}
               </TableCell>

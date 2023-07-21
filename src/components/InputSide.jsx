@@ -36,9 +36,10 @@ function clearWaiterState(){
     <div className="flexCol center">
       <br />
      <div className="flexCol center InputDiv">
+      <h2>הכנס כל מלצר ושעות</h2>
      <div className="flexCol center">
       <InputText func={writeWaiterName} valueW={waiter.name} type="שם מלצר" />   
-   <div className="flexRow">
+   <div className="flexRowToCol">
      <InputText func={writeWaiterHouer} inputType={'time'} valueW={waiter.houer}  type=" משעה" />   __ <InputText inputType={'time'} valueW={waiter.toHouer} func={writeWaiterToHouer}  type="עד שעה"/> 
  
    </div>
@@ -51,6 +52,7 @@ function clearWaiterState(){
 <br /><br /><br />
 
      <div className="InputSend flexCol center">
+      <h2>הזנת סכום טיפים</h2>
       <InputText func={props.getMoneyTip} inputType={'number'} type='סכום כל הטיפים'/>
      <ButtonSend func={props.startCalc} />
      </div>

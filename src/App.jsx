@@ -74,6 +74,9 @@ console.log(tableArray)
 
   return (
     <div className="flexCol center">
+      <div className="nav">
+       <p>אהובה סגירת טיפים</p>
+      </div>
       <br />
       <div className="flexRowToCol  bet w70">
 
