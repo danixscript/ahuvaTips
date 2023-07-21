@@ -21,6 +21,10 @@ html{
   display: flex;
   flex-direction: row;
 }
+.flexRowToCol{
+  display: flex;
+  flex-direction: row;
+}
 .center{
    
   justify-content: center;
@@ -47,8 +51,7 @@ html{
 
 
 @media screen and (max-width: 600px) {
-  .flexRow{
- 
+  .flexRowToCol{
     flex-direction: column;
   }
 }

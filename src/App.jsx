@@ -75,7 +75,7 @@ console.log(tableArray)
   return (
     <div className="flexCol center">
       <br />
-      <div className="flexRow  bet w70">
+      <div className="flexRowToCol  bet w70">
 
       <InputSide getMoneyTip={getMoneyTip} startCalc={startCalc} clearAll={clearAll} waiterFilter={waiterFilter}/>
 
