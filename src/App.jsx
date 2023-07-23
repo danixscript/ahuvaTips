@@ -61,7 +61,7 @@ var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
 today = mm + ',' + dd ;
 let sum = 0
 for(let i =0; i < WaiterArray.length; i++){
-var a = new Date('08-23 ' +WaiterArray[i].houer );
+var a = new Date('08-23 ' +WaiterArray[i].houer);
 var b = new Date('08-23 ' + WaiterArray[i].toHouer);
 var hours = Math.abs( b - a) / 36e5;
 
