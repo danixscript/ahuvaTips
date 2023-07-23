@@ -19,6 +19,14 @@ const [Rows,setRows] = useState([]);
   return (
     <TableContainer component={Paper}>
       <h2>טבלת טיפים</h2>
+      {props.sumWaitersHours > 0 ?
+      <p>סך הכל שעות :{props.sumWaitersHours.toFixed(2) }</p>
+      : ''}
+  {props.TipMoneyForHour > 0 ?
+      <p>טיפ לשעה:{props.TipMoneyForHour.toFixed(2) }</p>
+
+      : ''}
+      
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow  className='rtl'>
@@ -46,14 +54,14 @@ const [Rows,setRows] = useState([]);
               key={row.name}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
-               <TableCell align="right">{}</TableCell>
+               <TableCell align="right">{Math.floor(props.TipMoneyForHour * row.sumHours)}</TableCell>
               <TableCell align="right" component="th" scope="row">
                 {row.name}
               </TableCell>
               <TableCell align="right">{row.houer}</TableCell>
               <TableCell align="right">{row.toHouer}</TableCell>
-              <TableCell align="right">{row.sumHours}</TableCell>
-              <TableCell align="right">{}</TableCell>
+              <TableCell align="right">{row.sumHours.toFixed(3)}</TableCell>
+              <TableCell align="right">{Math.floor(props.TipMoneyForHour * row.sumHours)}</TableCell>
             </TableRow>
           ))}
         </TableBody>

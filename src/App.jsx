@@ -9,8 +9,9 @@ function App() {
 
 const [WaiterArray,setWaiterArray] = useState([])
 const [TipMoney,setTipMoney] = useState(0)
+const [TipMoneyForHour,setTipMoneyForHour] = useState(0)
 const [tableArray,setTableArray] = useState([])
-
+const [sumWaitersHours,setSumWaitersHours] = useState(0)
 function waiterFilter(e){
   let flag = false
 
@@ -53,23 +54,38 @@ function getMoneyTip(e){
   console.log(TipMoney)
 }
 function startCalc(){
-  console.log(WaiterArray,TipMoney);
 let arrTable = []
+var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+today = mm + ',' + dd ;
+let sum = 0
 for(let i =0; i < WaiterArray.length; i++){
-  var a = new Date(WaiterArray[i].houer );
-var b = new Date( WaiterArray[i].toHouer);
+var a = new Date('08,23 ' +WaiterArray[i].houer );
+var b = new Date('08,23 ' + WaiterArray[i].toHouer);
 var hours = Math.abs(b - a) / 36e5;
 
 // console.log(WaiterArray[i].name,'--',hours)
 WaiterArray[i].sumHours = hours
+
+sum += hours
 arrTable.push(WaiterArray[i])
 
 
+
 }
+
+let tipFoeHour = TipMoney / sum
+setTipMoneyForHour(tipFoeHour)
+
+setSumWaitersHours(sum)
 setTableArray(arrTable)
-console.log(tableArray)
+
+
+
   
 }
+
 
 
   return (
@@ -87,7 +103,7 @@ console.log(tableArray)
       <br />
 
      <div className="w80">
-     <TipTable array={tableArray} />
+     <TipTable TipMoneyForHour={TipMoneyForHour} sumWaitersHours={sumWaitersHours} array={tableArray} />
      </div>
    
     </div>
