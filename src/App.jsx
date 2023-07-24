@@ -61,8 +61,8 @@ function App() {
     let thedaynow = new Date();
 
     for (let i = 0; i < WaiterArray.length; i++) {
-      let day = "08-23 ";
-      let today = "08-23 ";
+      let day = "01-08-23 ";
+      let today = "01-08-23 ";
       let splitTime = WaiterArray[i].toHouer.split(":")[0];
 
       if (
@@ -75,7 +75,7 @@ function App() {
         splitTime == "06" ||
         splitTime == "07"
       ) {
-        today = "09-23 ";
+        today = "01-09-23 ";
       }
       var a = new Date(day + WaiterArray[i].houer);
       var b = new Date(today + WaiterArray[i].toHouer);
@@ -95,10 +95,10 @@ function App() {
         workersTable.push(WaiterArray[i]);
       }
     }
-
-    let tipFoeHour = TipMoney / sum;
-    setTipMoneyForHour(tipFoeHour);
-
+let hafrasha = sum * 6
+    let tipFoeHour = (TipMoney - hafrasha) / sum;
+    
+    setTipMoneyForHour(tipFoeHour );
     setSumWaitersHours(sum);
     setTableWorkersArray(workersTable);
     setTableArray(arrTable);
