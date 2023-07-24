@@ -44,7 +44,7 @@ function clearWaiterState(){
      <div className="flexCol center InputDiv">
       <h2>הכנס כל מלצר ושעות</h2>
      <div className="flexCol center">
-<div className="flexRow center">
+<div className="flexRowToCol center">
 <InputText func={writeWaiterName} valueW={waiter.name} type="שם " />   <SelectComp personJob={personJob} />
 
 </div>
