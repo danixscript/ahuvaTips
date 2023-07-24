@@ -37,7 +37,8 @@ const [Rows,setRows] = useState([]);
          <TableCell align="right"> עד שעה</TableCell> 
            <TableCell align="right"> משך שעות</TableCell>
              <TableCell align="right">סכום כסף</TableCell>   
-           
+             <TableCell align="right"> הפרשה</TableCell>   
+
              
               
            
@@ -54,14 +55,16 @@ const [Rows,setRows] = useState([]);
               key={row.name}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
-               <TableCell align="right">{Math.floor(props.TipMoneyForHour * row.sumHours)}</TableCell>
+               <TableCell align="right">{Math.floor(props.TipMoneyForHour * row.sumHours)-6}</TableCell>
               <TableCell align="right" component="th" scope="row">
                 {row.name}
               </TableCell>
               <TableCell align="right">{row.houer}</TableCell>
               <TableCell align="right">{row.toHouer}</TableCell>
               <TableCell align="right">{row.sumHours.toFixed(3)}</TableCell>
-              <TableCell align="right">{Math.floor(props.TipMoneyForHour * row.sumHours)}</TableCell>
+              <TableCell align="right">{Math.floor(props.TipMoneyForHour * row.sumHours)-6}</TableCell>
+              <TableCell align="right">{row.sumHours*6}</TableCell>
+
             </TableRow>
           ))}
         </TableBody>

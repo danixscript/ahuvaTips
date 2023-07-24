@@ -6,7 +6,6 @@ import WaiterList from './components/WaiterList';
 import { useState } from 'react';
 
 function App() {
-
 const [WaiterArray,setWaiterArray] = useState([])
 const [TipMoney,setTipMoney] = useState(0)
 const [TipMoneyForHour,setTipMoneyForHour] = useState(0)
