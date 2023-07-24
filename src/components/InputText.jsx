@@ -12,7 +12,7 @@ import TextField from '@mui/material/TextField';
       noValidate
       autoComplete="off"
     >
-      <TextField className='ltr' value={props.valueW} type={props.inputType} onChange={props.func} id="outlined-basic" label={props.type} variant="outlined" />
+      <TextField className='ltr without_ampm' value={props.valueW} type={props.inputType} onChange={props.func} id="outlined-basic" label={props.type} variant="outlined" />
   
     </Box>
   );
