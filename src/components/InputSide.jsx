@@ -5,9 +5,10 @@ import InputText from './InputText';
 import ButtonSuccess from './ButtonSuccess';
 import ButtonDelAll from './ButtonDelAll';
 import { useState } from 'react';
+import SelectComp from './SelectComp';
 
 function InputSide(props) {
-    const [waiter,setWaiter] = useState({name:'',houer:'',toHouer:''});
+    const [waiter,setWaiter] = useState({name:'',houer:'',toHouer:'',job:''});
   
 
         function writeWaiterName(e){
@@ -24,6 +25,11 @@ function InputSide(props) {
         setWaiter({...waiter,toHouer:e.target.value})
         }
 
+        function personJob(e){
+
+          setWaiter({...waiter,job:e.target.value})
+          }
+
 function clearWaiterState(){
     setWaiter({name:'',houer:'',toHouer:''})
 }
@@ -38,7 +44,10 @@ function clearWaiterState(){
      <div className="flexCol center InputDiv">
       <h2>הכנס כל מלצר ושעות</h2>
      <div className="flexCol center">
-      <InputText func={writeWaiterName} valueW={waiter.name} type="שם מלצר" />   
+<div className="flexRow center">
+<InputText func={writeWaiterName} valueW={waiter.name} type="שם " />   <SelectComp personJob={personJob} />
+
+</div>
    <div className="flexRowToCol">
      <InputText func={writeWaiterHouer} inputType={'time'} valueW={waiter.houer}  type=" משעה" />   __ <InputText inputType={'time'} valueW={waiter.toHouer} func={writeWaiterToHouer}  type="עד שעה"/> 
  
