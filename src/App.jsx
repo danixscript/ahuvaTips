@@ -60,6 +60,7 @@ var dd = String(today.getDate()).padStart(2, '0');
 var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
 today = mm + ',' + dd ;
 let sum = 0
+let thedaynow = new Date()
 for(let i =0; i < WaiterArray.length; i++){
 var a = new Date('08-23 ' +WaiterArray[i].houer);
 var b = new Date('08-23 ' + WaiterArray[i].toHouer);
