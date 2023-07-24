@@ -10,10 +10,12 @@ import ButtonRemove from './ButtonRemove';
      <div className="name flexRow bet" key={props.name}>
         <h3>   {e.name}
            </h3>
-           <p>   
+          <div className="flexCol">
+          <p>   
            {e.houer}:{e.dateStart}</p>
            <p>   
            {e.toHouer}:{e.dateEnd}</p>
+          </div>
            <p>  
             {e.job == 'Washing'? 'שוטף':
             e.job == 'cook' ? 'טבח':
