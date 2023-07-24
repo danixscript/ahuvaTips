@@ -20,7 +20,7 @@ function TipTable(props) {
         ""
       )}
       {props.sumWaitersHours > 0 ? (
-        <p>סך הכל הפרשה:{props.sumWaitersHours.toFixed(2) * 6}</p>
+        <p>סך הכל הפרשה:{(props.sumWaitersHours * 6).toFixed(2)}</p>
       ) : (
         ""
       )}
@@ -62,7 +62,7 @@ function TipTable(props) {
               <TableCell align="right">
                 {Math.floor(props.TipMoneyForHour * row.sumHours)}
               </TableCell>
-              <TableCell align="right">{row.sumHours.toFixed(2)*6}</TableCell>
+              <TableCell align="right">{(row.sumHours*6).toFixed(2)}</TableCell>
             </TableRow>
           ))}
         </TableBody>
