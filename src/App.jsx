@@ -53,38 +53,16 @@ function App() {
   function startCalc() {
     let arrTable = [];
     let workersTable = [];
-    var today = new Date();
-    var dd = String(today.getDate()).padStart(2, "0");
-    var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
-    today = mm + "," + dd;
+    // var today = new Date();
+    // var dd = String(today.getDate()).padStart(2, "0");
+    // var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+    // today = mm + "," + dd;
     let sum = 0;
-    let thedaynow = new Date();
 
     for (let i = 0; i < WaiterArray.length; i++) {
-      let day = "01-08-23 ";
-      let today = "01-08-23 ";
-      let splitTime = WaiterArray[i].toHouer.split(":")[0];
-
-      if (
-        splitTime == "00" ||
-        splitTime == "01" ||
-        splitTime == "02" ||
-        splitTime == "03" ||
-        splitTime == "04" ||
-        splitTime == "05" ||
-        splitTime == "06" ||
-        splitTime == "07"
-      ) {
-        today = "01-09-23 ";
-      }
-      var a = new Date(day + WaiterArray[i].houer);
-      var b = new Date(today + WaiterArray[i].toHouer);
+      var a = new Date(WaiterArray[i].dateStart+' ' + WaiterArray[i].houer);
+      var b = new Date(WaiterArray[i].dateEnd +' '+ WaiterArray[i].toHouer);
       var hours = Math.abs(b - a) / 36e5;
-
-      // מסדר עכשיו עשרוני
-
-      // let fixnum = hours.toFixed(2)
-      // let esroni = fixnum.split('.')[1]
 
       WaiterArray[i].sumHours = hours;
 

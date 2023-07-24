@@ -8,7 +8,7 @@ import { useState } from 'react';
 import SelectComp from './SelectComp';
 
 function InputSide(props) {
-    const [waiter,setWaiter] = useState({name:'',houer:'',toHouer:'',job:''});
+    const [waiter,setWaiter] = useState({name:'',houer:'',toHouer:'',job:'',dateStart:'',dateEnd:''});
   
 
         function writeWaiterName(e){
@@ -35,7 +35,12 @@ function clearWaiterState(){
 }
 
 
-
+function writeWaiterStartDate(e){
+  setWaiter({...waiter,dateStart:e.target.value})
+}
+function writeWaiterEndDate(e){
+  setWaiter({...waiter,dateEnd:e.target.value})
+}
 
 
   return (
@@ -46,6 +51,11 @@ function clearWaiterState(){
      <div className="flexCol center">
 <div className="flexRowToCol center">
 <InputText func={writeWaiterName} valueW={waiter.name} type="שם " />   <SelectComp personJob={personJob} />
+
+</div>
+<div className="flexRowToCol">
+<InputText func={writeWaiterStartDate} valueW={waiter.dateStart} type="מתאריך "  inputType={'date'}/>
+<InputText func={writeWaiterEndDate} valueW={waiter.dateEnd} type="עד תאריך "  inputType={'date'}/>
 
 </div>
    <div className="flexRowToCol">
