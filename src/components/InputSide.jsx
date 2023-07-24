@@ -31,7 +31,7 @@ function InputSide(props) {
           }
 
 function clearWaiterState(){
-    setWaiter({name:'',houer:'',toHouer:'',dateEnd:waiter.dateStart,dateEnd:waiter.dateEnd,job:waiter.job})
+    setWaiter({name:'',houer:'',toHouer:'',dateStart:waiter.dateStart,dateEnd:waiter.dateEnd,job:waiter.job})
 }
 
 
