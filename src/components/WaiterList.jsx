@@ -11,9 +11,9 @@ import ButtonRemove from './ButtonRemove';
         <h3>   {e.name}
            </h3>
            <p>   
-           {e.houer}</p>
+           {e.houer}:{e.dateStart}</p>
            <p>   
-           {e.toHouer}</p>
+           {e.toHouer}:{e.dateEnd}</p>
            <p>  
             {e.job == 'Washing'? 'שוטף':
             e.job == 'cook' ? 'טבח':

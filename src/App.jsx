@@ -13,6 +13,8 @@ function App() {
   const [TipMoneyForHour, setTipMoneyForHour] = useState(0);
   const [tableArray, setTableArray] = useState([]);
   const [sumWaitersHours, setSumWaitersHours] = useState(0);
+  const [sumCookHoursState, setSumCookHours] = useState(0);
+
 
   function waiterFilter(e) {
     let flag = false;
@@ -58,6 +60,7 @@ function App() {
     // var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
     // today = mm + "," + dd;
     let sum = 0;
+    let sumCookHours = 0
 
     for (let i = 0; i < WaiterArray.length; i++) {
       var a = new Date(WaiterArray[i].dateStart+' ' + WaiterArray[i].houer);
@@ -66,7 +69,13 @@ function App() {
 
       WaiterArray[i].sumHours = hours;
 
-      sum += hours;
+      if(WaiterArray[i].job == 'waiter'){
+        sum += hours;
+      }else if(WaiterArray[i].job == 'cook'){
+        sumCookHours += hours
+      }
+      
+
       if (WaiterArray[i].job == "waiter") {
         arrTable.push(WaiterArray[i]);
       } else {
@@ -78,6 +87,7 @@ let hafrasha = sum * 6
     
     setTipMoneyForHour(tipFoeHour );
     setSumWaitersHours(sum);
+    setSumCookHours(sumCookHours)
     setTableWorkersArray(workersTable);
     setTableArray(arrTable);
   }
@@ -111,7 +121,7 @@ let hafrasha = sum * 6
       <br />
       <br />
       <div className="w80">
-        <WorkerTable array={TableWorkersArray} />
+        <WorkerTable array={TableWorkersArray} sumCookHoursState={sumCookHoursState} />
       </div>
     </div>
   );

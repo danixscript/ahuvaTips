@@ -13,6 +13,9 @@ function WorkerTable(props) {
   return (
     <TableContainer component={Paper}>
       <h2>טבלת עובדים</h2>
+      {props.sumCookHoursState >0?
+      <p>"סך הכל שעות"{props.sumCookHoursState}</p>
+      :''}
 
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
