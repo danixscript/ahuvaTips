@@ -24,7 +24,7 @@ import Select, { SelectChangeEvent } from '@mui/material/Select';
           <MenuItem value={'Washing'}>שוטף</MenuItem>
           <MenuItem value={'cook'}>טבח</MenuItem>
           <MenuItem value={'hostess'}>מארחת</MenuItem>
-
+          <MenuItem value={'manege'}>אחמ"ש</MenuItem>
         </Select>
       </FormControl>
     </Box>

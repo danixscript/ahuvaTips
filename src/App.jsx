@@ -98,15 +98,17 @@ let hafrasha = sum * 6
         <p>אהובה סגירת טיפים</p>
       </div>
       <br />
-      <div className="flexRowToCol  bet w70">
+      <div className="flexCol  bet w70">
         <InputSide
           getMoneyTip={getMoneyTip}
           startCalc={startCalc}
           clearAll={clearAll}
           waiterFilter={waiterFilter}
+          list={WaiterArray} 
+          removeWaiter={removeWaiter}
         />
 
-        <WaiterList list={WaiterArray} removeWaiter={removeWaiter} />
+        {/* <WaiterList list={WaiterArray} removeWaiter={removeWaiter} /> */}
       </div>
       <br />
 

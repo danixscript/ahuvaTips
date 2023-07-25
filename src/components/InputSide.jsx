@@ -6,6 +6,7 @@ import ButtonSuccess from './ButtonSuccess';
 import ButtonDelAll from './ButtonDelAll';
 import { useState } from 'react';
 import SelectComp from './SelectComp';
+import WaiterList from './WaiterList';
 
 function InputSide(props) {
     const [waiter,setWaiter] = useState({name:'',houer:'',toHouer:'',job:'',dateStart:'',dateEnd:''});
@@ -67,6 +68,8 @@ function writeWaiterEndDate(e){
   </div>
         
         </div>
+        <br /><br /><br />
+        <WaiterList list={props.list} removeWaiter={props.removeWaiter} />
 
 <br /><br /><br />
 

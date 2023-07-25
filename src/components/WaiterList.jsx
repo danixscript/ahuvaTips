@@ -6,6 +6,12 @@ function WaiterList(props) {
     <div className="list grid">
       <h2>רשימת עובדים</h2>
       {props.list.map((e) => {
+         
+            var a = new Date(e.dateStart+' ' + e.houer);
+            var b = new Date(e.dateEnd +' '+ e.toHouer);
+            var hours = Math.abs(b - a) / 36e5;
+           
+          
         return (
           <div className="name flexRow bet" key={props.name}>
             <h3> {e.name}</h3>
@@ -13,6 +19,10 @@ function WaiterList(props) {
             <p>{e.houer}</p>
             <p>{e.toHouer}</p>
 
+            <p>{
+            hours
+              }</p>
+ 
             <p>
               {e.job == "Washing"
                 ? "שוטף"
