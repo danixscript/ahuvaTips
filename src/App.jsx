@@ -4,6 +4,7 @@ import InputSide from "./components/InputSide";
 import WaiterList from "./components/WaiterList";
 import { useEffect, useState } from "react";
 import WorkerTable from "./components/WorkerTable";
+import PopUp from "./components/PopUp";
 
 function App() {
   const [WaiterArray, setWaiterArray] = useState([]);
@@ -14,6 +15,7 @@ function App() {
   const [tableArray, setTableArray] = useState([]);
   const [sumWaitersHours, setSumWaitersHours] = useState(0);
   const [sumCookHoursState, setSumCookHours] = useState(0);
+  const [PopUpState, setPopUp] = useState({active:false,txt:''});
 
 
   function waiterFilter(e) {
@@ -21,12 +23,14 @@ function App() {
     for (let i = 0; i < WaiterArray.length; i++) {
       if (e.name == WaiterArray[i].name) {
         flag = true;
-        alert("מלצר כבר קיים");
+        setPopUp({active:true,txt:'המלצר כבר קיים'})
         return;
       }
     }
     if (e.name == "" || e.houer == "" || e.toHouer == "") {
       flag = true;
+      setPopUp({active:true,txt:"נא למלא את כל הפרטים"})
+
       return;
     }
     if (!flag) {
@@ -92,8 +96,17 @@ let hafrasha = sum * 6
     setTableArray(arrTable);
   }
 
+  function clearPopUp(){
+    setPopUp({active:false,txt:''})
+  }
+
   return (
     <div className="flexCol center">
+      {
+PopUpState.active == true ?
+<div><PopUp txt={PopUpState.txt} func={clearPopUp}/></div>
+:''
+      }
       <div className="nav">
         <p>אהובה סגירת טיפים</p>
       </div>

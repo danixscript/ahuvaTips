@@ -49,7 +49,23 @@ html{
 .list{
   min-width: 20vw;
 }
+.popup{
+  height: 100vh;
+  width: 100vw;
+background-color: rgba(0, 0, 0, 0.356);
 
+}
+.popUpSquare{
+  box-shadow: 1px 3px 10px black;
+padding: 20px;
+background-color: aliceblue;
+}
+.fixed{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999999;
+}
 
 @media screen and (max-width: 600px) {
   .flexRowToCol{
