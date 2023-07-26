@@ -71,6 +71,8 @@ function App() {
       var b = new Date(WaiterArray[i].dateEnd +' '+ WaiterArray[i].toHouer);
       var hours = Math.abs(b - a) / 36e5;
 
+      
+
       WaiterArray[i].sumHours = hours;
 
       if(WaiterArray[i].job == 'waiter'){

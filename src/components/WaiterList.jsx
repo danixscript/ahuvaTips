@@ -20,7 +20,7 @@ function WaiterList(props) {
             <p>{e.toHouer}</p>
 
             <p>{
-            hours
+            hours.toFixed(2)
               }</p>
  
             <p>
