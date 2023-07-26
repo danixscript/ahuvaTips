@@ -107,7 +107,7 @@ PopUpState.active == true ?
 <div><PopUp txt={PopUpState.txt} func={clearPopUp}/></div>
 :''
       }
-      <div className="nav">
+      <div className="nav w100">
         <p>אהובה סגירת טיפים</p>
       </div>
       <br />
@@ -138,6 +138,7 @@ PopUpState.active == true ?
       <div className="w80">
         <WorkerTable array={TableWorkersArray} sumCookHoursState={sumCookHoursState} />
       </div>
+      <br /><br /><br /><br /><br />
     </div>
   );
 }

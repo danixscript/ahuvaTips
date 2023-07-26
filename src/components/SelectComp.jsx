@@ -7,9 +7,6 @@ import Select, { SelectChangeEvent } from '@mui/material/Select';
 
  function SelectComp(props) {
 
-
-  
-
   return (
     <Box sx={{ minWidth: 120 }}>
       <FormControl fullWidth>
@@ -25,6 +22,8 @@ import Select, { SelectChangeEvent } from '@mui/material/Select';
           <MenuItem value={'cook'}>טבח</MenuItem>
           <MenuItem value={'hostess'}>מארחת</MenuItem>
           <MenuItem value={'manege'}>אחמ"ש</MenuItem>
+          <MenuItem value={'learner'}>מתלמד</MenuItem>
+
         </Select>
       </FormControl>
     </Box>
