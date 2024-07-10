@@ -17,7 +17,7 @@ function App() {
   const [sumCookHoursState, setSumCookHours] = useState(0);
   const [PopUpState, setPopUp] = useState({active:false,txt:''});
 
-
+   
   function waiterFilter(e) {
     let flag = false;
     for (let i = 0; i < WaiterArray.length; i++) {
