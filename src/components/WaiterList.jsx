@@ -16,14 +16,14 @@ function WaiterList(props) {
           <div className="name flexRow bet" key={props.name}>
             <h3> {e.name}</h3>
 
-            <p>{e.houer}</p>
-            <p>{e.toHouer}</p>
+            {/* <p>{e.houer}</p>
+            <p>{e.toHouer}</p> */}
 
             <p>{
             hours.toFixed(2)
               }</p>
  
-            <p>
+            {/* <p>
               {e.job == "Washing"
                 ? "שוטף"
                 : e.job == "cook"
@@ -33,7 +33,7 @@ function WaiterList(props) {
                 : e.job == "hostess"
                 ? "מארחת"
                 : ""}
-            </p>
+            </p> */}
             <ButtonRemove func={props.removeWaiter} waiter={e.name} />
           </div>
         );
