@@ -110,7 +110,7 @@ PopUpState.active == true ?
 :''
       }
       <div className="nav w100">
-        <p>אהובה סגירת טיפים</p>
+        <h3>אהובה סגירת טיפים</h3>
       </div>
       <br />
       <div className="flexCol  bet w70">
